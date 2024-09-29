@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Photo of the Day</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css"> <!-- Your custom CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="header text-center">
+            <img src="/images/12ec0ad159a6b898df071697f6c59513.png" alt="NASA Logo" style="height: 100px; width: auto;">
+            <span class="title-text">Photo of the Day</span>
+        </h1>
+        <form action="/fetch" method="POST" class="text-center">
+            <input type="date" name="date" required>
+            <button type="submit">Fetch Photo</button>
+        </form>
+        <% if (photo) { %>
+            <div class="card mt-4">
+                <img src="<%= photo.url %>" class="card-img-top" alt="<%= photo.title %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= photo.title %></h5>
+                    <p class="card-text"><%= photo.explanation %></p>
+                </div>
+            </div>
+        <% } else if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
