@@ -15,7 +15,7 @@ Welcome to the **NASA Photo of the Day** web application! This project fetches a
 
 ## 📷 Screenshot
 
-![NASA Photo of the Day Screenshot](path/to/your/screenshot.png)
+![NASA Photo of the Day Screenshot](public/images/screenshot.png)
 
 ---
 
