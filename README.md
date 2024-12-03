@@ -1,6 +1,6 @@
 # 🚀 NASA Photo of the Day
 
-Welcome to the **NASA Photo of the Day** web application! This project fetches and displays the NASA Astronomy Picture of the Day (APOD) based on the selected date. It's built using **Node.js**, **Express.js**, and integrates with the official NASA API.
+Welcome to the **NASA Photo of the Day** web application! This project fetches and displays the NASA Astronomy Picture of the Day (APOD) based on the selected date. It's built using the **PERN** stack: **PostgreSQL, Express.js, React.js,** and **Node.js**., and integrates with the official NASA API.
 
 ---
 
@@ -8,8 +8,9 @@ Welcome to the **NASA Photo of the Day** web application! This project fetches a
 
 - Fetches NASA's Astronomy Picture of the Day (APOD) for any selected date.
 - Displays the image along with the title and description.
-- Interactive and user-friendly interface.
-- Responsive design with Bootstrap for a sleek, modern look.
+- Fully interactive React-based user interface.
+- Backend API powered by Node.js and Express.js.
+- Responsive design with CSS and modern UI components.
 
 ---
 
@@ -21,11 +22,12 @@ Welcome to the **NASA Photo of the Day** web application! This project fetches a
 
 ## 🛠️ Technologies Used
 
+- **React.js**: Frontend framework for building the user interface.
 - **Node.js**: Backend runtime environment.
-- **Express.js**: Web framework for Node.js.
+- **Express.js**: Web framework for creating the API.
+- **PostgresSQL**: Database for storing user preferences or logs (optional).
 - **NASA API**: Fetches the APOD data.
-- **Bootstrap**: For responsive design and modern UI components.
-- **EJS**: Template engine for rendering dynamic content.
+- **CSS**: For styling the application.
 
 ---
 
@@ -36,17 +38,53 @@ Follow these steps to get the project up and running locally on your machine:
 ### 1. Clone the repository:
 
 ```bash
-git clone https://github.com/meh636/CS-312-MiniProject-2.git
+git clone https://github.com/meh636/Group-Project-Phase-2.git
 ```
-### 2. Install dependencies:
+### 2. Set up the backend (server):
+```bash
+cd nasa-photo-of-the-day/server
+```
+### 3. Install backend dependencies:
 ```bash
 npm install
 ```
-### 3. Start the server:
+### 4. Set up the .env file with your NASA API key and daatabase credentials:
+```bash
+NASA_API_KEY=your_api_key_here
+DATABASE_URL=your_postgres_connection_string_here
+```
+### 5. Run the backend server:
 ```bash
 npm start
 ```
-The application will now be running at http://localhost:3000/.
+
+### 6. Set up the frontend (client):
+```bash
+cd ../client
+```
+### 7. Install frontend dependencies:
+```bash
+npm install
+```
+### 8. Run the frontend development server:
+```bash
+npm start
+```
+Access the app in your browser at http://localhost:3000
+
+---
+
+## 🛠 Development
+
+You can develop the project by making changes to the code in the respective directories and running the development servers for both the backend and frontend.
+
+---
+
+## 📦 Deployment
+
+The project can be deployed to a hosting platform like Heroku, Vercel, or Netlify. Make sure to configure the environment variables and database connections accordingly.
+
+---
 
 ---
 
@@ -61,14 +99,21 @@ This project uses NASA's APOD API to fetch the image and metadata for a specific
 ```bash
 nasa-photo-of-the-day/
 │
-├── /public/                # Static assets (CSS, images)
-├── /views/                 # EJS templates
-│   ├── index.ejs           # Main page template
-│   └── error.ejs           # Error page template
-├── app.js                  # Main application file
-├── .env                    # Environment variables (API key)
-├── package.json            # Node.js dependencies and scripts
-└── README.md               # Project documentation
+├── /client/                # React frontend
+│   ├── /public/            # Static assets (CSS, images)
+│   ├── /src/               # React components and logic
+│   ├── package.json        # Frontend dependencies
+│   └── ...                 # Other React-related files
+│
+├── /server/                # Express backend
+│   ├── app.js              # Main application file
+│   ├── db.js               # PostgreSQL database connection
+│   ├── package.json        # Backend dependencies
+│   ├── .env                # Environment variables
+│   └── ...                 # Backend-specific files
+│
+├── README.md               # Project documentation
+└── .gitignore              # Ignore files like node_modules and .env
 ```
 
 ---
@@ -77,8 +122,8 @@ nasa-photo-of-the-day/
 
 - Add loading indicators while fetching data.
 - Implement error handling for invalid or unavalible dates.
-- Enhance mobile responsiveness for a better user experience.
-- Cache data to reduce API calls for frequently selected dates.
+- Cache API responses to reduce network requests.
+- Add user accounts and save favorite photos in the database.
 
 ---
 
@@ -91,13 +136,13 @@ This project is liscenced under the MIT License.
 ## 💡 Acknowledgments
 
 - Special thanks to NASA for providing the amazing APOD API.
-- Huge appreciation to Bootstrap for the UI components and Node.js for the smooth backend integration.
+- Huge appreciation to React, Node.js, and PostgreSQL for making this stack robust and scalable.
 
 ---
 
 ## ✨ Contributors
 
-- Mary Hardiman - Project Creator
+- Mary - Project Creator
 
 Feel free to contribute! Submit a pull request or open an issue to improve the project. 
   
